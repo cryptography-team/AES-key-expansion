@@ -11,13 +11,13 @@ protected:
   const byte RC[10], transformationMatrix[8], xorColumn;
 
 public:
-  keyExpansion();
-  void init(byte key[16], word w[4]) const;
-  byte transformByte(const byte &b) const;
-  byte subByte(const byte &b) const;
-  word subWord(const word &w) const;
-  word rotWord(const word &w) const;
-  void expand(byte key[16], word w[44]) const;
+  keyExpansion();                              // yasser
+  void init(byte key[16], word w[4]) const;    // yasser
+  byte transformByte(const byte &b) const;     // muns
+  byte subByte(const byte &b) const;           // muns
+  word subWord(const word &w) const;           // muns
+  word rotWord(const word &w) const;           // yasser
+  void expand(byte key[16], word w[44]) const; // muns
 };
 
 } // namespace AES
