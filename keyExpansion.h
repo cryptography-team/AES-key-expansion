@@ -13,8 +13,8 @@ protected:
 public:
   keyExpansion();
   void init(byte key[16], word w[4]) const;
-  byte mulBytes(const byte &first, const byte &second) const;
   byte transformByte(const byte &b) const;
+  byte subByte(const byte &b) const;
   word subWord(const word &w) const;
   word rotWord(const word &w) const;
   void expand(byte key[16], word w[44]) const;
