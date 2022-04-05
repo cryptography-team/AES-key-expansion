@@ -4,14 +4,17 @@
 namespace AES {
 
 class keyExpansion {
-private:
+protected:
   typedef unsigned char byte;
   typedef unsigned int word;
 
-  byte RC[10];
+  const byte RC[10], transformationMatrix[8], xorColumn;
 
 public:
-  void init(byte key[16], word w[4]);
+  keyExpansion();
+  void init(byte key[16], word w[4]) const;
+  byte mulBytes(const byte &first, const byte &second) const;
+  byte transformByte(const byte &b) const;
   word subWord(const word &w) const;
   word rotWord(const word &w) const;
   void expand(byte key[16], word w[44]) const;
