@@ -8,7 +8,7 @@ protected:
   typedef unsigned char byte;
   typedef unsigned int word;
 
-  const byte RC[10], transformationMatrix[8], xorColumn;
+  byte RC[10], transformationMatrix[8], xorColumn;
 
 public:
   keyExpansion();                              // yasser
