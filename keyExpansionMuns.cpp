@@ -15,7 +15,7 @@ byte keyExpansion :: transformByte(const byte &b) const
 } // muns
 byte keyExpansion :: subByte(const byte &b) const
 {
-    return transformByte(b);
+    return keyExpansion::transformByte(b);
 }          // muns
 word keyExpansion :: subWord(const word &w) const
 {
@@ -28,12 +28,13 @@ word keyExpansion :: subWord(const word &w) const
 }           // muns
 void keyExpansion :: expand(byte key[16], word w[44]) const
 {
+    init(key,w);
     word tmp;
     for (int i=4; i < 44; i++)
     {
         tmp = w[i-1];
         if (i % 4 == 0)
-            tmp = SubWord(rotWord(tmp)) ^ RC[i/4]<<24;
+            tmp = subWord(rotWord(tmp)) ^ RC[i/4]<<24;
         w[i] = w[i-4] ^ tmp;
     }
 }
