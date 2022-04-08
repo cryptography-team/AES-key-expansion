@@ -23,4 +23,4 @@ void keyExpansion::init(byte key[16], word w[4]) const {
     }
 }
 
-word rotWord(const word &w) const { return (word << 8) | (word >> 24); }
+word keyExpansion::rotWord(const word &w) const { return (w << 8) | (w >> 24); }
