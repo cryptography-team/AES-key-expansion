@@ -13,11 +13,11 @@ byte keyExpansion :: transformByte(const byte &b) const
     return res^xorColumn;
 
 } // muns
-byte subByte(const byte &b) const
+byte keyExpansion :: subByte(const byte &b) const
 {
     return transformbyte(b);
 }          // muns
-word subWord(const word &w) const
+word keyExpansion :: subWord(const word &w) const
 {
     word resword = 0;
     for(int i =0 ; i<4; i++)
@@ -26,7 +26,7 @@ word subWord(const word &w) const
     }
     return resword;
 }           // muns
-void expand(byte key[16], word w[44]) const
+void keyExpansion :: expand(byte key[16], word w[44]) const
 {
     word tmp;
     for (int i=4; i < 44; i++)
