@@ -15,7 +15,7 @@ byte keyExpansion :: transformByte(const byte &b) const
 } // muns
 byte keyExpansion :: subByte(const byte &b) const
 {
-    return transformbyte(b);
+    return transformByte(b);
 }          // muns
 word keyExpansion :: subWord(const word &w) const
 {
