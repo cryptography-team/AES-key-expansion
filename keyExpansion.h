@@ -1,13 +1,11 @@
 #ifndef KEY_EXPANSION_HEADER
 #define KEY_EXPANSION_HEADER
-
+typedef unsigned char byte;
+typedef unsigned int word;
 namespace AES {
 
 class keyExpansion {
 protected:
-  typedef unsigned char byte;
-  typedef unsigned int word;
-
   byte RC[10], transformationMatrix[8], xorColumn;
 
 public:
