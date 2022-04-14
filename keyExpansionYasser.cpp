@@ -17,7 +17,7 @@ keyExpansion::keyExpansion() : xorColumn(0x63) {
 
 void keyExpansion::init(byte key[16], word w[4]) const {
   for (int i = 0; i < 4; ++i)
-    for (int j = 0; j < 4; ++i) {
+    for (int j = 0; j < 4; ++j) {
       w[i] <<= 8;
       w[i] |= key[4 * i + j];
     }
