@@ -1,6 +1,9 @@
 #include "keyExpansion.h"
 using AES::keyExpansion;
-
+// Forward substitute byte transformation function
+// Multiply each row of the transformation matrix by the byte to be converted.
+// To get the result bit, perform an XOR operation on each result byte from the multiplication on all bits.
+// Now that we have a multiply result byte, we can XOR it with the xorColumn to get the final result.
 byte keyExpansion :: transformByte(const byte &b) const
 {
     byte res = 0;
@@ -8,11 +11,13 @@ byte keyExpansion :: transformByte(const byte &b) const
     for (int i = 0; i < 8; i++)
     {
         sub = transformationMatrix[i] * b;
-        res |= (__builtin_popcount(sub) & 1) << i;
+        // __builtin_popcount() function returns the number of ones
+        res |= (__builtin_popcount(sub) & 1)<<i;
     }
     return res^xorColumn;
 
 } // muns
+
 byte keyExpansion :: subByte(const byte &b) const
 {
     return keyExpansion::transformByte(b);
@@ -20,12 +25,15 @@ byte keyExpansion :: subByte(const byte &b) const
 word keyExpansion :: subWord(const word &w) const
 {
     word resword = 0;
+    // To retrieve the transform word, call the subByte function four times.
     for(int i =0 ; i<4; i++)
     {
+        resword <<= 8;
         resword |= subByte(w>>i*8);
     }
     return resword;
 }           // muns
+
 void keyExpansion :: expand(byte key[16], word w[44]) const
 {
     init(key,w);
