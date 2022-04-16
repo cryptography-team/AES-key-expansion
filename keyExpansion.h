@@ -1,7 +1,10 @@
 #ifndef KEY_EXPANSION_HEADER
 #define KEY_EXPANSION_HEADER
+#include <fstream>
 #include <iostream>
-using namespace std;
+using std::cout;
+using std::hex;
+using std::ifstream;
 typedef unsigned char byte;
 typedef unsigned int word;
 namespace AES {
