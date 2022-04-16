@@ -26,8 +26,4 @@ void keyExpansion::initExpand(byte key[16], word w[4]) const {
 
 // This function makes a left cyclic byte shift by discarding the last byte and
 // ORing it at the beginning (32 - 8 = 24)
-word keyExpansion::rotWord(const word &w) const {
-  word tmp = (w << 8) | (w >> 24);
-  cout << "rotWord = " << hex << tmp << endl;
-  return tmp;
-}
+word keyExpansion::rotWord(const word &w) const { return (w << 8) | (w >> 24); }
