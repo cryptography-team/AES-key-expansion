@@ -6,7 +6,7 @@ using namespace std;
 int main() {
   keyExpansion tool;
   word expandKey[44];
-  byte key[16];
+  AES::byte key[16];
   cout << "Enter your key:" << endl;
   // Hold the values in a proper form in a stringstream
   stringstream ss;

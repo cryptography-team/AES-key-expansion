@@ -1,5 +1,5 @@
 #include "keyExpansion.h"
-using AES::keyExpansion;
+using namespace AES;
 
 void keyExpansion::initTable() {
   ifstream subs_file("subbyte table.txt");

@@ -2,12 +2,12 @@
 #define KEY_EXPANSION_HEADER
 #include <fstream>
 #include <iostream>
+namespace AES {
 using std::cout;
 using std::hex;
 using std::ifstream;
 typedef unsigned char byte;
 typedef unsigned int word;
-namespace AES {
 
 class keyExpansion {
 protected:

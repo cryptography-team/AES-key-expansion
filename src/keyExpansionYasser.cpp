@@ -1,6 +1,6 @@
 #include "keyExpansion.h"
 
-using AES::keyExpansion;
+using namespace AES;
 
 // This function initializes the constants as described in the reference
 keyExpansion::keyExpansion() {
